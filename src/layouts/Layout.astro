@@ -18,8 +18,8 @@ const resolvedImageWithDomain = new URL(
 const { title } = Astro.props;
 
 const makeTitle = title
-  ? title + " | " + "Astroship"
-  : "Astroship - Starter Template for Astro with Tailwind CSS";
+  ? title + " | " + "James Tsetsekas"
+  : "James Tsetsekas - Full Stack Web Developer";
 ---
 
 <!DOCTYPE html>
@@ -33,22 +33,22 @@ const makeTitle = title
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description="Astroship is a starter website template for Astro built with TailwindCSS."
+      description="James Tsetsekas - Full Stack Web Developer."
       canonical={canonicalURL}
       twitter={{
-        creator: "@surjithctly",
-        site: "@web3templates",
+        creator: "@JamesTsetsekas",
+        site: "@JamesTsetsekase",
         card: "summary_large_image",
       }}
       openGraph={{
         basic: {
           url: canonicalURL,
           type: "website",
-          title: `Astroship - Starter Template for Astro`,
+          title: `James Tsetsekas - Full Stack Web Developer`,
           image: resolvedImageWithDomain,
         },
         image: {
-          alt: "Astroship Homepage Screenshot",
+          alt: "James Tsetsekas - Full Stack Web Developer",
         },
       }}
     />
@@ -62,6 +62,10 @@ const makeTitle = title
       /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
       img {
         content-visibility: auto;
+      }
+        ::selection{
+        background-color: rgba(0,0,0,.7) !important;
+        color: rgba(255,255,255,1) !important;
       }
     </style>
   </body>

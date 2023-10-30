@@ -2,15 +2,223 @@
 // @ts-ignore
 import { Icon } from "astro-icon";
 ---
+<style>
+  #jstoggle, #phptoggle, #wptoggle, #csstoggle, #devopstoggle, #ecommercetoggle
+{
+  cursor: pointer;
+}
+#jstoggle:hover, #phptoggle:hover, #wptoggle:hover, #csstoggle:hover, #devopstoggle:hover, #ecommercetoggle:hover
+{
+  color: rgba(255,255,255,1);
+  background-color: rgba(0,0,0, .75);
+}
+</style>
 
 <div class="mt-24">
-  <h2 class="text-center text-slate-500">Works with your technologies</h2>
-  <div class="flex gap-8 md:gap-20 items-center justify-center mt-10 flex-wrap">
-    <Icon class="h-8 md:h-12" name="simple-icons:react" />
-    <Icon class="h-8 md:h-12" name="simple-icons:svelte" />
-    <Icon class="h-8 md:h-14" name="simple-icons:tailwindcss" />
-    <Icon class="h-8 md:h-16" name="simple-icons:alpinedotjs" />
-    <Icon class="h-8 md:h-12" name="simple-icons:vercel" />
-    <Icon class="h-8 md:h-12" name="simple-icons:astro" />
+  <h2 class="text-center text-slate-500">I 🧡 Working with Technology:</h2>
+  <div id="techToggles" class="flex gap-6 md:gap-6 items-center justify-center mt-10 flex-wrap">
+
+    <div id="jstoggle" class="p-4 flex flex-col items-center justify-center rounded-lg">
+      <Icon class="h-8 md:h-12 ml-5 mr-5" name="simple-icons:javascript" />
+      <span>JavaScript</span>
+    </div>
+
+    <div id="phptoggle" class="p-4 flex flex-col items-center justify-center rounded-lg">
+      <Icon class="h-8 md:h-12 ml-5 mr-5" name="simple-icons:php" />
+      <span>PHP</span>
+    </div>
+
+    <div id="wptoggle" class="p-4 flex flex-col items-center justify-center rounded-lg">
+      <Icon class="h-8 md:h-12 ml-5 mr-5" name="simple-icons:wordpress" />
+      <span>Wordpress</span>
+    </div>
+
+    <div id="csstoggle" class="p-4 flex flex-col items-center justify-center rounded-lg">
+      <Icon class="h-8 md:h-12 ml-5 mr-5" name="simple-icons:css3" />
+      <span>CSS</span>
+    </div>
+
+    <div id="devopstoggle" class="p-4 flex flex-col items-center justify-center rounded-lg">
+      <Icon class="h-8 md:h-12 ml-5 mr-5" name="simple-icons:azuredevops" />
+      <span>DevOps</span>
+    </div>
+
+    <div id="ecommercetoggle" class="p-4 flex flex-col items-center justify-center rounded-lg">
+      <Icon class="h-8 md:h-12 ml-5 mr-5" name="simple-icons:shopify" />
+      <span>ECommerce</span>
+    </div>
+
+
   </div>
 </div>
+
+<div id="js-related-items" class="mt-6 related-items flex flex-col items-center justify-center" style="display:none;">
+  <div class="flex gap-6 md:gap-6 items-center justify-center mt-6 flex-wrap">
+    <div class="p-4 flex flex-col items-center justify-center rounded-lg">
+      <Icon class="h-8 md:h-12 ml-5 mr-5" name="simple-icons:react" />
+      <span>React</span>
+    </div>
+    <div class="p-4 flex flex-col items-center justify-center rounded-lg">
+      <Icon class="h-8 md:h-12 ml-5 mr-5" name="simple-icons:angularjs" />
+      <span>AngularJS</span>
+    </div>
+    <div class="p-4 flex flex-col items-center justify-center rounded-lg">
+      <Icon class="h-8 md:h-12 ml-5 mr-5" name="simple-icons:nextdotjs" />
+      <span>Next.js</span>
+    </div>
+    <div class="p-4 flex flex-col items-center justify-center rounded-lg">
+      <Icon class="h-8 md:h-12 ml-5 mr-5" name="simple-icons:vuedotjs" />
+      <span>Vue.js</span>
+    </div>
+    <div class="p-4 flex flex-col items-center justify-center rounded-lg">
+      <Icon class="h-8 md:h-12 ml-5 mr-5" name="simple-icons:emberdotjs" />
+      <span>Ember.js</span>
+    </div>
+    <div class="p-4 flex flex-col items-center justify-center rounded-lg">
+      <Icon class="h-8 md:h-12 ml-5 mr-5" name="simple-icons:nodedotjs" />
+      <span>Node.js</span>
+    </div>
+    <div class="p-4 flex flex-col items-center justify-center rounded-lg">
+      <Icon class="h-8 md:h-12 ml-5 mr-5" name="simple-icons:gatsby" />
+      <span>Gatsby</span>
+    </div>
+    <div class="p-4 flex flex-col items-center justify-center rounded-lg">
+      <Icon class="h-8 md:h-12 ml-5 mr-5" name="simple-icons:express" />
+      <span>ExpressJS</span>
+    </div>
+  </div>
+</div>
+
+<div id="php-related-items" class="mt-6 related-items flex flex-col items-center justify-center" style="display:none;">
+  <div class="flex gap-6 md:gap-6 items-center justify-center mt-6 flex-wrap">
+    <div id="phptoggle" class="p-4 flex flex-col items-center justify-center rounded-lg">
+      <Icon class="h-8 md:h-12 ml-5 mr-5" name="simple-icons:php" />
+      <span>PHP</span>
+    </div>
+    <div id="phptoggle" class="p-4 flex flex-col items-center justify-center rounded-lg">
+      <Icon class="h-8 md:h-12 ml-5 mr-5" name="simple-icons:wordpress" />
+      <span>WordPress</span>
+    </div>
+    <div id="phptoggle" class="p-4 flex flex-col items-center justify-center rounded-lg">
+      <Icon class="h-8 md:h-12 ml-5 mr-5" name="simple-icons:cakephp" />
+      <span>CakePHP</span>
+    </div>
+    <div id="phptoggle" class="p-4 flex flex-col items-center justify-center rounded-lg">
+      <Icon class="h-8 md:h-12 ml-5 mr-5" name="simple-icons:laravel" />
+      <span>Laravel</span>
+    </div>
+    <div id="phptoggle" class="p-4 flex flex-col items-center justify-center rounded-lg">
+      <Icon class="h-8 md:h-12 ml-5 mr-5" name="simple-icons:symfony" />
+      <span>symfony</span>
+    </div>
+  </div>
+</div>
+
+<div id="wp-related-items" class="mt-6 related-items flex flex-col items-center justify-center" style="display:none;">
+  <div class="flex gap-6 md:gap-6 items-center justify-center mt-6 flex-wrap">
+    <div class="p-4 flex flex-col items-center justify-center rounded-lg">
+      <Icon class="h-8 md:h-12 ml-5 mr-5" name="simple-icons:react" />
+      <span>React</span>
+    </div>
+    <div id="phptoggle" class="p-4 flex flex-col items-center justify-center rounded-lg">
+      <Icon class="h-8 md:h-12 ml-5 mr-5" name="simple-icons:php" />
+      <span>PHP</span>
+    </div>
+  </div>
+</div>
+
+<div id="css-related-items" class="mt-6 related-items flex flex-col items-center justify-center" style="display:none;">
+  <div class="flex gap-6 md:gap-6 items-center justify-center mt-6 flex-wrap">
+    <div class="p-4 flex flex-col items-center justify-center rounded-lg">
+      <Icon class="h-8 md:h-12 ml-5 mr-5" name="simple-icons:tailwindcss" />
+      <span>Tailwind css</span>
+    </div>
+    <div id="phptoggle" class="p-4 flex flex-col items-center justify-center rounded-lg">
+      <Icon class="h-8 md:h-12 ml-5 mr-5" name="simple-icons:bootstrap" />
+      <span>Bootstrap</span>
+    </div>
+    <div class="p-4 flex flex-col items-center justify-center rounded-lg">
+      <Icon class="h-8 md:h-12 ml-5 mr-5" name="simple-icons:materialdesign" />
+      <span>Material Design</span>
+    </div>
+    <div class="p-4 flex flex-col items-center justify-center rounded-lg">
+      <Icon class="h-8 md:h-12 ml-5 mr-5" name="simple-icons:bulma" />
+      <span>Bulma</span>
+    </div>
+    <div class="p-4 flex flex-col items-center justify-center rounded-lg">
+      <Icon class="h-8 md:h-12 ml-5 mr-5" name="simple-icons:semanticuireact" />
+      <span>Semantic UI</span>
+    </div>
+  </div>
+</div>
+
+<div id="devops-related-items" class="mt-6 related-items flex flex-col items-center justify-center" style="display:none;">
+  <div class="flex gap-6 md:gap-6 items-center justify-center mt-6 flex-wrap">
+    <div class="p-4 flex flex-col items-center justify-center rounded-lg">
+      <Icon class="h-8 md:h-12 ml-5 mr-5" name="simple-icons:react" />
+      <span>React</span>
+    </div>
+    <div id="phptoggle" class="p-4 flex flex-col items-center justify-center rounded-lg">
+      <Icon class="h-8 md:h-12 ml-5 mr-5" name="simple-icons:php" />
+      <span>PHP</span>
+    </div>
+  </div>
+</div>
+
+<div id="ecommerce-related-items" class="mt-6 related-items flex flex-col items-center justify-center" style="display:none;">
+  <div class="flex gap-6 md:gap-6 items-center justify-center mt-6 flex-wrap">
+    <div class="p-4 flex flex-col items-center justify-center rounded-lg">
+      <Icon class="h-8 md:h-12 ml-5 mr-5" name="simple-icons:woo" />
+      <span>WooCommerce</span>
+    </div>
+    <div class="p-4 flex flex-col items-center justify-center rounded-lg">
+      <Icon class="h-8 md:h-12 ml-5 mr-5" name="simple-icons:shopify" />
+      <span>Shopify</span>
+    </div>
+    <div class="p-4 flex flex-col items-center justify-center rounded-lg">
+      <Icon class="h-8 md:h-12 ml-5 mr-5" name="simple-icons:wix" />
+      <span>Wix</span>
+    </div>
+    <div class="p-4 flex flex-col items-center justify-center rounded-lg">
+      <Icon class="h-8 md:h-12 ml-5 mr-5" name="simple-icons:bigcommerce" />
+      <span>BigCommerce</span>
+    </div>
+    <div class="p-4 flex flex-col items-center justify-center rounded-lg">
+      <Icon class="h-8 md:h-12 ml-5 mr-5" name="simple-icons:squarespace" />
+      <span>Squarespace</span>
+    </div>
+  </div>
+</div>
+
+
+<script>
+function hideAll() {
+  const relatedItems = document.querySelectorAll('.related-items');
+  relatedItems.forEach(item => {
+    item.classList.remove('active');
+    item.style.display = "none";
+  });
+}
+
+function showRelatedItems(id, toggleId) {
+  hideAll();
+  const relatedItems = document.getElementById(id);
+  relatedItems.classList.add('active');
+  relatedItems.style.display = "flex";
+  document.getElementById(toggleId).classList.add('active');
+}
+
+function setupToggleClickEvent(toggleId, relatedItemId) {
+  document.getElementById(toggleId).onclick = function() {
+    showRelatedItems(relatedItemId, toggleId);
+  };
+}
+
+setupToggleClickEvent('jstoggle', 'js-related-items');
+setupToggleClickEvent('phptoggle', 'php-related-items');
+setupToggleClickEvent('wptoggle', 'wp-related-items');
+setupToggleClickEvent('csstoggle', 'css-related-items');
+setupToggleClickEvent('devopstoggle', 'devops-related-items');
+setupToggleClickEvent('ecommercetoggle', 'ecommerce-related-items');
+
+</script>

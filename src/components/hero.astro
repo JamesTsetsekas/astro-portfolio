@@ -4,50 +4,105 @@ import heroImage from "assets/hero.png";
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon";
 ---
+<style>
+.greeting:hover {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='wave'  width='100' height='100' viewport='0 0 100 100' style='fill:black;font-size:50px;'><text y='50%'>👋</text></svg>") 16 0,auto;
+}
+.card-image img {
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  transition: all .3s;
+  border-radius: 15px;
+  -webkit-box-shadow: 1rem 1rem #2b2d42;
+  box-shadow: 1rem 1rem rgba(0,0,0,1);
+  border: 4px solid rgba(255,255,255,0);
+}
+ .card-image img:hover {
+  -webkit-transform: translate(-0.5rem,-0.5rem);
+  -moz-transform: translate(-.5rem,-.5rem);
+  transform: translate(-0.5rem,-0.5rem);
+  -webkit-box-shadow: 2rem 2rem rgba(0,0,0,1);
+  box-shadow: 2rem 2rem rgba(255,255,255,1);
+  border: 4px solid rgba(0,0,0,1);
+}
+.wave {
+  animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s;        /* Change to speed up or slow down */
+  animation-iteration-count: infinite;  /* Never stop waving :) */
+  transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
 
+@keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(14.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+  100% { transform: rotate( 0.0deg) }
+}
+</style>
 <main
   class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
-  <div class="py-6 md:order-1 hidden md:block">
+  <div class="py-6 md:order-1 hidden md:block card-image">
     <Picture
       src={heroImage}
       alt="Astronaut in the air"
       widths={[200, 400, 600]}
-      aspectRatio="4:3"
-      sizes="(max-width: 800px) 100vw, 620px"
+      aspectRatio="1:1"
+      sizes="(max-width: 350px) 100vw, 350px"
       loading="eager"
       format="avif"
     />
   </div>
   <div>
     <h1
-      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
-      Marketing website done with Astro
+      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter greeting">
+      <span class="wave">👋</span> Hey, Im<br>James Tsetsekas
     </h1>
     <p class="text-lg mt-4 text-slate-600 max-w-xl">
-      Astroship is a starter template for startups, marketing websites & landing
-      pages.<wbr /> Built with Astro.build and TailwindCSS. You can quickly create
-      any website with this starter.
+      I'm a Full Stack Web Developer specializing in building web applications using HTML, CSS, JavaScript, & PHP. I have strong experience with Front End Development Libraries like React, Vue, and Angular as well as Algorithms, Data Structures, Back End Development and APIs with Node.js. I am interested in teams valuing quality, clean code principles. In my free time I teach & mentor hundreds of students via coding communities and meetups.
     </p>
     <div class="mt-6 flex flex-col sm:flex-row gap-3">
       <Link
-        href="#"
-        href="https://web3templates.com/templates/astroship-starter-website-template-for-astro"
+        href="/contact"
         target="_blank"
         class="flex gap-1 items-center justify-center"
         rel="noopener">
-        <Icon class="text-white w-5 h-5" name="bx:bxs-cloud-download" />
-
-        Download for Free
+        <Icon class="text-white w-4 h-4" name="bx:bxs-envelope" />
+        Contact me
       </Link>
       <Link
         size="lg"
         style="outline"
         rel="noopener"
-        href="https://github.com/surjithctly/astroship"
+        href="https://drive.google.com/file/d/1eiKzle8AcAT-6E8ut5n2vl-d3FKoYAs8/view?usp=sharing"
+        class="flex gap-1 items-center justify-center"
+        target="_blank">
+        <Icon class="text-black w-4 h-4" name="bx:bxs-file" />
+        Resume
+      </Link>
+      <Link
+        size="lg"
+        style="outline"
+        rel="noopener"
+        href="https://github.com/JamesTsetsekas"
         class="flex gap-1 items-center justify-center"
         target="_blank">
         <Icon class="text-black w-4 h-4" name="bx:bxl-github" />
-        GitHub Repo
+        GitHub
+      </Link>
+      <Link
+        size="lg"
+        style="outline"
+        rel="noopener"
+        href="https://btc.jamestsetsekas.com/apps/4Y4qW4zydTxQWWydQidcgjfT6v3F/pos"
+        class="flex gap-1 items-center justify-center"
+        target="_blank">
+        <Icon class="text-black w-4 h-4" name="bx:bxs-zap" />
+        Zap Sats
       </Link>
     </div>
   </div>

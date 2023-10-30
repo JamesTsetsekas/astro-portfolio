@@ -5,6 +5,11 @@ import Sectionhead from "@components/sectionhead.astro";
 import Layout from "@layouts/Layout.astro";
 import { Icon } from "astro-icon";
 ---
+<style>
+  #root > div > div > div > a {
+    display: none !important;
+  }
+</style>
 
 <Layout title="Contact">
   <Container>
@@ -23,15 +28,15 @@ import { Icon } from "astro-icon";
         <div class="mt-5">
           <div class="flex items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="uil:map-marker" />
-            <span>1734 Sanfransico, CA 93063</span>
+            <span>Jersey City, NJ</span>
           </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" /><a
               href="mailto:hello@astroshipstarter.com"
-              >hello@astroshipstarter.com</a
+              >James@JamesTsetsekas.com</a
             >
           </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="uil:phone" /><a
-              href="tel:+1 (987) 4587 899">+1 (987) 4587 899</a
+              href="tel:+1 (555) 555 5555">+1 (555) 555 5555</a
             >
           </div>
         </div>
@@ -42,3 +47,22 @@ import { Icon } from "astro-icon";
     </div>
   </Container>
 </Layout>
+<!-- Calendly badge widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script type="text/javascript">window.onload = function () { Calendly.initBadgeWidget({ url: 'https://calendly.com/james-tsetsekas', text: 'Schedule time with me', color: '#000', textColor: '#ffffff', branding: true }); }</script>
+<!-- Calendly badge widget end -->
+<script>
+function removeElement(selector) {
+  const elementToRemove = document.querySelector(selector);
+
+  if (elementToRemove) {
+    elementToRemove.remove();
+  } else {
+    setTimeout(() => removeElement(selector), 100);
+  }
+}
+
+removeElement('body > div.calendly-badge-widget > div > span');
+
+</script>
