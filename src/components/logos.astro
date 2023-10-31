@@ -11,6 +11,8 @@ import { Icon } from "astro-icon";
   #devopstoggle,
   #ecommercetoggle {
     cursor: pointer;
+    transition: transform 250ms;
+
   }
   #jstoggle:hover,
   #phptoggle:hover,
@@ -20,10 +22,23 @@ import { Icon } from "astro-icon";
   #ecommercetoggle:hover {
     color: rgba(255, 255, 255, 1);
     background-color: rgba(0, 0, 0, 0.75);
+    transform: translate3d(0px, 10px, 0px);
   }
   #techToggles .active {
     color: rgba(255, 255, 255, 1);
     background-color: rgba(0, 0, 0, 0.75);
+    transform: translate3d(0px, 40px, 0px);
+  }
+      #jstoggle:active,
+  #phptoggle:active,
+  #wptoggle:active,
+  #csstoggle:active,
+  #devopstoggle:active,
+  #ecommercetoggle:active {
+    transform: translate3d(0px, 40px, 0px);
+  }
+  .related-items {
+    transition: transform 250ms;
   }
 </style>
 
@@ -72,7 +87,7 @@ import { Icon } from "astro-icon";
       id="ecommercetoggle"
       class="p-4 flex flex-col items-center justify-center rounded-lg tech-toggle">
       <Icon class="h-8 md:h-12 ml-5 mr-5" name="simple-icons:shopify" />
-      <span>ECommerce</span>
+      <span>E-Commerce</span>
     </div>
 
     <div
@@ -277,7 +292,6 @@ import { Icon } from "astro-icon";
   function showRelatedItems(id, toggleId) {
     hideAll();
     const relatedItems = document.getElementById(id);
-    relatedItems.classList.add("active");
     relatedItems.style.display = "flex";
     document.getElementById(toggleId).classList.add("active");
   }

@@ -1,3 +1,7 @@
+---
+---
+<style>
+</style>
 <section class="bg-white mt-12">
   <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
     <figure class="max-w-screen-md mx-auto">
@@ -11,23 +15,61 @@
           fill="currentColor"></path>
       </svg>
       <blockquote>
-        <p class="text-2xl font-medium text-gray-900">
-          "Flowbite is just awesome. It contains tons of predesigned components
-          and pages starting from login screen to complex dashboard. Perfect
-          choice for your next SaaS application."
+        <p id="reviewText" class="text-2xl font-medium text-gray-900 transition-opacity">
+          <!-- Review text will be updated dynamically -->
         </p>
       </blockquote>
       <figcaption class="flex items-center justify-center mt-6 space-x-3">
         <img
-          class="w-6 h-6 rounded-full"
-          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png"
+          id="profilePicture"
+          class="w-6 h-6 rounded-full transition-opacity"
+          src=""
           alt="profile picture"
         />
         <div class="flex items-center divide-x-2 divide-gray-500">
-          <div class="pr-3 font-medium text-gray-900">Micheal Gough</div>
-          <div class="pl-3 text-sm font-light text-gray-500">CEO at Google</div>
+          <div id="authorName" class="pr-3 font-medium text-gray-900 transition-opacity"></div>
+          <div id="position" class="pl-3 text-sm font-light text-gray-500 transition-opacity"></div>
         </div>
       </figcaption>
     </figure>
   </div>
 </section>
+<script>
+  const reviews = [
+  {
+    text: "James is just awesome.",
+    author: "Micheal Gough",
+    position: "CEO at Google",
+    profilePicture: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png"
+  },
+  {
+    text: "James Rules.",
+    author: "Elon Musk",
+    position: "X",
+    profilePicture: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png"
+  },
+  // Add more reviews as needed
+];
+
+let currentReviewIndex = 0;
+
+function showReview(index) {
+  const review = reviews[index];
+  document.getElementById("reviewText").textContent = review.text;
+  document.getElementById("authorName").textContent = review.author;
+  document.getElementById("position").textContent = review.position;
+  document.getElementById("profilePicture").src = review.profilePicture;
+}
+
+function cycleReviews() {
+  showReview(currentReviewIndex);
+  currentReviewIndex = (currentReviewIndex + 1) % reviews.length;
+}
+
+// Show the first review immediately
+cycleReviews();
+
+// Set an interval to cycle through reviews every 5 seconds (5000 milliseconds)
+setInterval(cycleReviews, 5000);
+
+</script>
