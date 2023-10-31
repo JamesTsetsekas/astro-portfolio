@@ -2,11 +2,11 @@
 ---
 <style>
 </style>
-<section class="bg-white mt-12">
+<section class="mt-10">
   <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
     <figure class="max-w-screen-md mx-auto">
       <svg
-        class="h-12 mx-auto mb-3 text-black-400"
+        class="h-12 mx-auto mb-2 text-black-400"
         viewBox="0 0 24 27"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">
@@ -33,9 +33,14 @@
       </figcaption>
     </figure>
   </div>
+  <div class="flex justify-center mt-4 space-x-3 circle-container">
+    <!-- Circles for reviews -->
+    <!-- <div class="w-4 h-4 rounded-full bg-black"></div>
+    <div class="w-4 h-4 rounded-full bg-white border border-slate-950"></div> -->
+  </div>
 </section>
 <script>
-  const reviews = [
+const reviews = [
   {
     text: "James is just awesome.",
     author: "Micheal Gough",
@@ -46,6 +51,12 @@
     text: "James Rules.",
     author: "Elon Musk",
     position: "X",
+    profilePicture: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png"
+  },
+  {
+    text: "Excellent.",
+    author: "Mr. Burnes",
+    position: "Springfield Nuclear Power Plant",
     profilePicture: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png"
   },
   // Add more reviews as needed
@@ -61,10 +72,47 @@ function showReview(index) {
   document.getElementById("profilePicture").src = review.profilePicture;
 }
 
+function addReviewCircles() {
+  const circleContainer = document.createElement('div');
+  circleContainer.classList.add('circle-container', 'flex', 'justify-center', 'mt-6', 'space-x-3');
+
+  reviews.forEach((review, index) => {
+    const circle = document.createElement('div');
+    circle.classList.add('circle');
+    circle.innerHTML = `<div class="w-4 h-4 rounded-full bg-black border border-white"></div>`;
+    circle.addEventListener('click', () => {
+      currentReviewIndex = index;
+      showReview(currentReviewIndex);
+      updateActiveCircle();
+    });
+    circleContainer.appendChild(circle);
+  });
+
+  document.querySelector('section').appendChild(circleContainer);
+
+  // Set the first circle as active
+  updateActiveCircle();
+}
+
+function updateActiveCircle() {
+  const circles = document.querySelectorAll('.circle');
+  circles.forEach((circle, index) => {
+    if (index === currentReviewIndex) {
+      circle.innerHTML = `<div class="w-5 h-5 rounded-full bg-white border-2 border-slate-950 cursor-pointer animate-pulse"></div>`;
+    } else {
+      circle.innerHTML = `<div class="w-5 h-5 rounded-full bg-black border border-white cursor-pointer"></div>`;
+    }
+  });
+}
+
 function cycleReviews() {
   showReview(currentReviewIndex);
+  updateActiveCircle();
   currentReviewIndex = (currentReviewIndex + 1) % reviews.length;
 }
+
+// Call the function to add circles
+addReviewCircles();
 
 // Show the first review immediately
 cycleReviews();
